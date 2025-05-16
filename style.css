@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 40px;
+}
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    /* for my eyes */
+    background-color: #333333;
+}
+
+/* container */
+.container{
+    border-radius: 40px;
+    background-color: black;
+    padding: 15px;
+    display: grid;
+    grid-template-rows: 100px;
+    grid-template-columns: 430px;
+}
+/* display */
+.display{
+    display: flex;
+    align-items: end;
+}
+.display input{
+    background-color: black;
+    color: white;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 60px;
+    font-weight: 100;
+    text-align: right;
+}
+/* buttons */
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+}
+button{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #333333;
+    color: white;
+    border: none;
+}
+button:hover{
+    cursor: pointer;
+    background-color: #737373;
+    color: #fcfcfc;
+}
+button:nth-child(17){
+    grid-column: span 2;
+    width: 100%;
+    border-radius: 80px;
+}
+/* 4, 8, 12, 16, 19 */
+button:nth-child(4n), button:nth-last-child(1){
+    background-color: orange;
+}
+button:nth-child(4n):hover, button:nth-last-child(1):hover{
+    background-color: #fbc78e;
+    color: #fefff9;
+}
+button:nth-child(4n):focus{
+    background-color: white;
+    color: orange;
+}
+button:nth-child(-n+3){
+    background-color: #a5a5a5;
+    color: black;
+}
+button:nth-child(-n+3):hover{
+    background-color: #d9d9d9;
+    color: #030303;
+}

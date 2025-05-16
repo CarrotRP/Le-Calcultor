@@ -7,15 +7,14 @@ let op = ''; //operator
 let doReset = false; //reset the screen to ""
 
 button_parent.addEventListener('click', e => {
-
     if (e.target.matches('button')) {
         //numbers and period(.)
         //set the max length of the display
         if(display.value.length < 13){
             //check if the button presses is a number, or the period
             if (!isNaN(e.target.innerHTML) || e.target.innerHTML == ".") {
-                //check if display == 0, so that if a number is pressed, it doesnt go '01'
-                if (display.value === '0' || doReset) {
+                //check if display == '0', so that if a number is pressed, it doesnt go '01'
+                if (display.value == '0' || doReset) {
                     //check if the button is pressed isnt '.' and the value isnt '0.'
                     if (!(e.target.innerHTML == ".") && display.value != '0.') {
                         display.value = "";
@@ -81,7 +80,9 @@ function calculate(){
             result = a - b;
             break;
         case '*':
-            result = a * b;
+            //0 trailing
+            //js float being js float
+            result = (a * b).toFixed(11);
             break;
         case '/':
             try{
